@@ -1,13 +1,17 @@
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tutorial/screens/SixtheVideo.dart';
-
+import 'package:getx_tutorial/screens/thired_video.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyB9kDIpHc12NfblI-rTk5rpj1E5dOp9xDM",
+          appId: "1:619598138404:android:830754718656f931c5dcb1",
+          messagingSenderId: "619598138404",
+          projectId: 'getx-tutorial-1455b'));
   runApp(const MyApp());
 }
 
@@ -23,45 +27,29 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //< --------------- For SixtheVideo Screen -------------------->
-      initialRoute: '/',
-      defaultTransition: Transition.zoom,
-      getPages: [
-
-        GetPage(name: '/', page: () =>const SixtheVideoScreen() ),
-        GetPage(name: '/home', page: () => SixtheVideoHomeScreen()),
-        // GetPage(name: '/nextScreen', page: () => NextScreen(),
-        // transition: Transition.leftToRight,
-        //),
-
-        GetPage(
-          name : '/nextScreen/:someValue',
-          page: ()=> NextScreen(),
-
-          // TO control the transition route wise
-          // If specified will override the default transition
-
-          transition:  Transition.leftToRight
-
-        )
-      ],
-      unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoute()),
-      // home: FivethVideo(),
+      // initialRoute: '/',
+      // defaultTransition: Transition.zoom,
+      // getPages: [
+      //   GetPage(name: '/', page: () => const SixtheVideoScreen()),
+      //   GetPage(name: '/home', page: () => SixtheVideoHomeScreen()),
+      //   // GetPage(name: '/nextScreen', page: () => NextScreen(),
+      //   // transition: Transition.leftToRight,
+      //   //),
+      //
+      //   GetPage(
+      //       name: '/nextScreen/:someValue',
+      //       page: () => NextScreen(),
+      //
+      //       // TO control the transition route wise
+      //       // If specified will override the default transition
+      //
+      //       transition: Transition.leftToRight)
+      // ],
+      // unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoute()),
+      home: check(),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
@@ -226,7 +214,6 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
-
 
 // import 'dart:convert';
 //

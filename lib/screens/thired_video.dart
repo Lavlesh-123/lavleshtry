@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'fiveth_video.dart';
+
 class ThiredVideo extends StatelessWidget {
   const ThiredVideo({Key? key}) : super(key: key);
 
@@ -56,9 +58,10 @@ class ThiredVideo extends StatelessWidget {
                       ElevatedButton(
                           onPressed: () {
                             Get.back();
+
                           },
                           child: Text('Action-1')),
-                      ElevatedButton(onPressed: () {}, child: Text('Action-2')),
+                      ElevatedButton(onPressed: () {Get.isPopGestureEnable;}, child: Text('Action-2')),
 
                     ],
                 // barrierDismissible: false,
@@ -70,6 +73,39 @@ class ThiredVideo extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+class check extends StatefulWidget {
+  const check({Key? key}) : super(key: key);
+
+  @override
+  State<check> createState() => _checkState();
+}
+
+class _checkState extends State<check> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Check'),
+      ),body: Column(
+      children: [
+        Center(
+          child: ElevatedButton(
+            onPressed: (){
+              Get.to(const FivetheVideoHome(),
+                fullscreenDialog: true,
+                transition: Transition.zoom,
+                //duration: Duration(milliseconds: 2000),
+                curve: Curves.bounceInOut,
+
+              );
+            }, child: Text('Click me'),
+          ),
+        )
+      ],
+    ),
     );
   }
 }
