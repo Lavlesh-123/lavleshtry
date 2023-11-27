@@ -20,52 +20,53 @@ class ThiredVideo extends StatelessWidget {
               onPressed: () {
                 // Get.defaultDialog();
                 Get.defaultDialog(
-                    title: 'Dialog Title',
-                    titleStyle: TextStyle(fontSize: 25),
-                    middleText: 'This is middle text',
-                    middleTextStyle: TextStyle(fontSize: 20),
-                    backgroundColor: Colors.purpleAccent,
-                    radius: 80,
-                    content: const Row(
-                      children: [
-                        CircularProgressIndicator(),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Expanded(child: Text('Data Loading'))
-                      ],
-                    ),
-                    textCancel: 'Cancel',
-                    cancelTextColor: Colors.white,
-                    textConfirm: 'Conform',
-                    confirmTextColor: Colors.white,
-                    onConfirm: () {
-                      print('Conform');
-                    },
-                    onCancel: () {
-                      print('Cancel');
-                    },
-                    buttonColor: Colors.green,
-                    cancel: const Text(
-                      'Cancels',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    confirm: const Text(
-                      'Conforms',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    actions: [
-                      ElevatedButton(
-                          onPressed: () {
-                            Get.back();
-
-                          },
-                          child: Text('Action-1')),
-                      ElevatedButton(onPressed: () {Get.isPopGestureEnable;}, child: Text('Action-2')),
-
+                  title: 'Dialog Title',
+                  titleStyle: TextStyle(fontSize: 25),
+                  middleText: 'This is middle text',
+                  middleTextStyle: TextStyle(fontSize: 20),
+                  backgroundColor: Colors.purpleAccent,
+                  radius: 80,
+                  content: const Row(
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      Expanded(child: Text('Data Loading'))
                     ],
-                // barrierDismissible: false,
-                  
+                  ),
+                  textCancel: 'Cancel',
+                  cancelTextColor: Colors.white,
+                  textConfirm: 'Conform',
+                  confirmTextColor: Colors.white,
+                  onConfirm: () {
+                    print('Conform');
+                  },
+                  onCancel: () {
+                    print('Cancel');
+                  },
+                  buttonColor: Colors.green,
+                  cancel: const Text(
+                    'Cancels',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  confirm: const Text(
+                    'Conforms',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  actions: [
+                    ElevatedButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: Text('Action-1')),
+                    ElevatedButton(
+                        onPressed: () {
+                          Get.isPopGestureEnable;
+                        },
+                        child: Text('Action-2')),
+                  ],
+                  // barrierDismissible: false,
                 );
               },
               child: Text('Click me'),
@@ -76,6 +77,7 @@ class ThiredVideo extends StatelessWidget {
     );
   }
 }
+
 class check extends StatefulWidget {
   const check({Key? key}) : super(key: key);
 
@@ -89,23 +91,25 @@ class _checkState extends State<check> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Check'),
-      ),body: Column(
-      children: [
-        Center(
-          child: ElevatedButton(
-            onPressed: (){
-              Get.to(const FivetheVideoHome(),
-                fullscreenDialog: true,
-                transition: Transition.zoom,
-                //duration: Duration(milliseconds: 2000),
-                curve: Curves.bounceInOut,
-
-              );
-            }, child: Text('Click me'),
-          ),
-        )
-      ],
-    ),
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Get.to(
+                  const FivetheVideoHome(),
+                  fullscreenDialog: true,
+                  transition: Transition.zoom,
+                  // duration: Duration(milliseconds: 2000),
+                  curve: Curves.bounceInOut,
+                );
+              },
+              child: Text('Click me'),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
